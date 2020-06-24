@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>海阔天空</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/blog/images/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/normalize.css">
+    <link rel="stylesheet" href="/blog/css/index.css">
+  </head>
+  <body>
+    <div class="page">
+        <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/blog/">海阔天空</a>
+                    </div>
+                
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            
+                                <li><a href="/blog/">首页</a></li>
+                            
+                                <li><a href="/blog/categories">分类</a></li>
+                            
+                                <li><a href="/blog/about">关于</a></li>
+                            
+                        
+                        
+                        
+                    </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+        </nav>
+        <section class="main-content">
+            <div class="container artical-box">
+    <div class="artical-content">
+        <h3 id="python和vscode的环境搭建"><a href="#python和vscode的环境搭建" class="headerlink" title="python和vscode的环境搭建"></a>python和vscode的环境搭建</h3><hr>
+<h4 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h4><ul>
+<li>这次轻车熟路，真的顺很多</li>
+<li>安装的时候注意选择将python添加至PATH</li>
+</ul>
+<h4 id="win10-虚拟环境的搭建"><a href="#win10-虚拟环境的搭建" class="headerlink" title="win10 虚拟环境的搭建"></a>win10 虚拟环境的搭建</h4><ul>
+<li>pip install virtualenv</li>
+<li>pip install virtualenvwrapper-win</li>
+<li>设置环境变量 WORKON_HOME 指定虚拟环境的保存路径</li>
+<li>将python目录下的scripts文件夹加入PTAH环境变量中<ul>
+<li>这样可以在任何地方使用virtualenvwrapper的命令行</li>
+</ul>
+</li>
+</ul>
+<h4 id="参考网址"><a href="#参考网址" class="headerlink" title="参考网址"></a><a href="https://github.com/seven-share/dailyCode/blob/master/win-%E9%85%8D%E7%BD%AEpython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.md" target="_blank" rel="noopener">参考网址</a></h4><h4 id="vscode的命令行修改"><a href="#vscode的命令行修改" class="headerlink" title="vscode的命令行修改"></a>vscode的命令行修改</h4><ul>
+<li>尴尬，我也不知道为什么win10的命令行cmd在vscode里开始会出现空行</li>
+<li>powershell，用起来不顺</li>
+<li>于是想把cmder嵌入，方法如下</li>
+</ul>
+<hr>
+<ul>
+<li>“terminal.integrated.shell.windows”: “cmd.exe”,</li>
+<li>“terminal.integrated.env.windows”: {“CMDER_ROOT”: “[cmder_root]”},</li>
+<li>“terminal.integrated.shellArgs.windows”: [“/k”, “[cmder_root]\vendor\init.bat”],</li>
+<li>[cmder_root]换成cmder的安装路径</li>
+<li><a href="https://blog.csdn.net/leonhe27/article/details/81210000" target="_blank" rel="noopener">参考网址</a></li>
+</ul>
+<h4 id="虚拟环境管理，为什么没选pipenv"><a href="#虚拟环境管理，为什么没选pipenv" class="headerlink" title="虚拟环境管理，为什么没选pipenv"></a>虚拟环境管理，为什么没选pipenv</h4><ul>
+<li>咱这行，用熟不用生，哈哈，开个玩笑</li>
+<li>网上对于pipenv好评如潮，肯定是好的</li>
+<li>有一个缺点，虚拟环境对应者项目，而我不想每次做一个小demo都新创建一个虚拟环境</li>
+<li>virtualenvwrapper可以多个项目使用同一个环境</li>
+</ul>
+
+        <div class="artical-content-date">
+            2019-06-03
+        </div>
+    </div>
+</div>
+        </section>
+        <footer>
+            <div class="container">
+                <div>谁年少不曾轻狂</div>
+                <div>Copyright © 2019 - sevenQu</div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

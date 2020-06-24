@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>海阔天空</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/blog/images/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/normalize.css">
+    <link rel="stylesheet" href="/blog/css/index.css">
+  </head>
+  <body>
+    <div class="page">
+        <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/blog/">海阔天空</a>
+                    </div>
+                
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            
+                                <li><a href="/blog/">首页</a></li>
+                            
+                                <li><a href="/blog/categories">分类</a></li>
+                            
+                                <li><a href="/blog/about">关于</a></li>
+                            
+                        
+                        
+                        
+                    </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+        </nav>
+        <section class="main-content">
+            <div class="container artical-box">
+    <div class="artical-content">
+        <h4 id="flask-gunicorn-ngnix-supervisor部署总结"><a href="#flask-gunicorn-ngnix-supervisor部署总结" class="headerlink" title="flask-gunicorn-ngnix-supervisor部署总结"></a>flask-gunicorn-ngnix-supervisor部署总结</h4><hr>
+<h4 id="杂序"><a href="#杂序" class="headerlink" title="杂序"></a>杂序</h4><ul>
+<li>折腾了好多天，真的是有bug，查资料，问人，再查资料，再尝试，不断地尝试，逐步理解每一步，很感谢帮助过我的人，我把我的部署做个总结分享给大家希望可以作为其他的参考，刚从小白过来，可能有错的，希望指出</li>
+</ul>
+<h4 id="环境和工具"><a href="#环境和工具" class="headerlink" title="环境和工具"></a>环境和工具</h4><ul>
+<li>Ubuntu16.04，本地机部署(完全可以参考，同样可以部署到vps)  </li>
+<li>使用flask-gunicorn-ngnix-supervisor  </li>
+<li>数据库使用mysql</li>
+<li>flask源程序是使用的flask web开发那本书的程序</li>
+</ul>
+<h4 id="主要参考"><a href="#主要参考" class="headerlink" title="主要参考"></a>主要参考</h4><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/28718966" target="_blank" rel="noopener">腾讯云部署Python3网站程序</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22126999" target="_blank" rel="noopener">阿里云Python+Flask环境搭建</a></li>
+<li><a href="http://blog.csdn.net/qq_32198277/article/details/52432890" target="_blank" rel="noopener">Python日记——nginx+Gunicorn部署你的Flask项目</a></li>
+<li><a href="http://blog.csdn.net/sinat_21302587/article/details/76836283" target="_blank" rel="noopener"> supervisor ERROR (spawn error)</a></li>
+<li><a href="http://liyangliang.me/posts/2015/06/using-supervisor/" target="_blank" rel="noopener">使用 supervisor 管理进程(需要翻墙)</a></li>
+<li><a href="https://gist.github.com/binderclip/f6b6f5ed4d71fa64c7c5" target="_blank" rel="noopener">Flask Gunicorn Supervisor Nginx 项目部署小总结(需要翻墙)—-真的是很好的教程，还有下面的参考都可以看看</a></li>
+<li><a href="http://blog.csdn.net/werewolf_st/article/details/45933949" target="_blank" rel="noopener">连接mysql参考</a></li>
+<li><a href="http://blog.csdn.net/DreamHome_S/article/details/78137151" target="_blank" rel="noopener">Ubuntu16.04安装MySQL数据库和和可视化工具MySQL Workbench</a></li>
+<li><a href="http://blog.csdn.net/jgirl_333/article/details/48575281" target="_blank" rel="noopener"> ubuntu安装mysql可视化工具MySQL-workbench及简单操作</a></li>
+<li><a href="http://blog.csdn.net/YiLiang_/article/details/68923870" target="_blank" rel="noopener">ubuntu下mysql可视化工具mysql-workbench简单操作</a></li>
+<li><a href="https://www.cnblogs.com/timelyxyz/p/6859822.html" target="_blank" rel="noopener">Docker 添加用户到docker组</a></li>
+<li><a href="http://www.cnblogs.com/xuanmanstein/p/7692256.html" target="_blank" rel="noopener">用docker部署flask+gunicorn+nginx</a></li>
+</ul>
+<h4 id="源码部署"><a href="#源码部署" class="headerlink" title="源码部署"></a>源码部署</h4><ul>
+<li>将源码放到指定的位置的方法多种多样，可以使用git，scp等</li>
+<li>如果想部署到云端，使用ssh远程登录即可</li>
+<li>数据库，我之前一直不明白数据库怎么办，可以在本地或虚拟主机直接安装mysql，启动，程序连接即可</li>
+<li>开启mysql数据库，创建数据库，把数据库名字记下来</li>
+<li>新建虚拟环境，可以使用pyenv，virtualenv等</li>
+<li>进入虚拟环境后，pip install -r requirement.txt</li>
+<li>修改数据库的地址，python manage.py deploy，进行数据库的迁移</li>
+<li>然后直接python manage.py runserver确认程序运行无误</li>
+</ul>
+<h4 id="gunicorn，nginx，supervisor的关系"><a href="#gunicorn，nginx，supervisor的关系" class="headerlink" title="gunicorn，nginx，supervisor的关系"></a>gunicorn，nginx，supervisor的关系</h4><ul>
+<li>首先gunicorn自己就可以作为flask的服务器，因为对静态文件支持不好，所以使用nginx进行转发</li>
+<li>supervisor是一个进程管理工具，如果有程序停止，可以自动的重启，方便维护</li>
+<li>请求从前端来了，首先是通过nginx，进行判断，如果访问的是gunicorn监听的端口，就会进行转发</li>
+<li>nginx可以进行分发，只监听80端口，然后再分给其他的进程监听的端口，同时可以直接访问静态文件</li>
+</ul>
+<h4 id="gunicorn部署"><a href="#gunicorn部署" class="headerlink" title="gunicorn部署"></a>gunicorn部署</h4><ul>
+<li>首先是安装gunicorn，我是通过pip安装到了虚拟环境</li>
+<li>直接使用gunicorn命令行把程序运行起来</li>
+<li>例子：gunicorn manage:app -b localhost:8000 -w 3</li>
+<li>注意是在虚拟环境下运行，同时在自己的项目目录里，这样才能找到manage</li>
+<li>我这里是使用的flask-scrip插件进行启动的，是manager.run()</li>
+<li>manage:app，manage是文件名字，app是create_app()对应的变量名字</li>
+<li>如果没使用flask-scrip插件，直接是app.run()的话，则是文件名:app</li>
+<li>首先确认这里是可以部署成功的，可以访问localhost：8000</li>
+</ul>
+<h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h4><ul>
+<li>ngnix部署不难，安装，配置即可</li>
+<li>nginx -t，命令可以检查配置是否正确</li>
+<li>如果配置成功，则直接访问localhost即可</li>
+<li>注意上面是需要8000端口，这里已经不需要了</li>
+<li>原理是http默认访问80端口，所以实际访问的是localhost：80</li>
+<li>nginx监听的是80端口，然后转发到了8000端口</li>
+</ul>
+<h4 id="supervisor"><a href="#supervisor" class="headerlink" title="supervisor"></a>supervisor</h4><ul>
+<li>最后一步就是使用supervisor管理进程，管理gunicorn运行flask</li>
+<li>supervisord是server端，supervisorctl是client端</li>
+<li>supervisor网上说只能切换到python2.7环境去安装，不支持pyhton3</li>
+<li>我直接使用的apt install supervisor安装的，感觉挺顺</li>
+<li>然后就是进行配置，重新读取配置，重启</li>
+<li>关键点在于command，注意gunicorn命令的启动路径，直接写成绝对路径</li>
+<li>例子：/home/seven/Desktop/niceblog/niceblogEnv/bin/gunicorn manage:app -b localhost:8000 -w 3</li>
+<li>启动后，大功告成</li>
+</ul>
+<h4 id="完结"><a href="#完结" class="headerlink" title="完结"></a><strong>完结</strong></h4><h5 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a><strong>踩坑</strong></h5><ul>
+<li>sudo netstat -ntpl这个命令很好用，gunicorn，nginx或supervisor部署完后，可以查看是否启动监听了指定端口</li>
+<li>supervisorctl status查询状态</li>
+<li>supervisorctl tail programname stdout查询日志，这里的信息比较全面，error spwn，Exited too quickly这些都不明确，查看日志分析问题</li>
+<li>如果是找不到module或application，supervisor的配置文件可能是directory 指定项目目录不对</li>
+</ul>
+<h5 id="附"><a href="#附" class="headerlink" title="附"></a><strong>附</strong></h5><h5 id="nginx结构解读"><a href="#nginx结构解读" class="headerlink" title="nginx结构解读"></a>nginx结构解读</h5><ul>
+<li>首先看/etc/nginx里的nginx.conf，最后<br>  <code>`</code><br>  include /etc/nginx/conf.d/<em>.conf;<br>  include /etc/nginx/sites-enabled/</em>;</li>
+<li>所以我觉得把配置文件放入这两个文件夹都可以</li>
+<li>同时原本的defualt文件需要备份，个人觉得直接剪切到cong.d即可，因为不会被引用</li>
+<li>defualt监听的是80端口，静态资源在root /var/www/html;所以一开始会是nginx默认网页</li>
+</ul>
+<h5 id="supervisor和gunicorn"><a href="#supervisor和gunicorn" class="headerlink" title="supervisor和gunicorn"></a>supervisor和gunicorn</h5><ul>
+<li>原本gunicorn是可以有配置文件的，我看配置文件配置比较简单，就直接在supervisor的command里执行了</li>
+<li>可以配置[inet_http_server]，这样可以直接在网页端查看错误信息</li>
+<li>[include]files = etc/supervisor/conf.d/*.conf，所以是引用的conf.d里的文件</li>
+<li>在conf.d新建配置文件即可</li>
+</ul>
+
+        <div class="artical-content-date">
+            2019-06-02
+        </div>
+    </div>
+</div>
+        </section>
+        <footer>
+            <div class="container">
+                <div>谁年少不曾轻狂</div>
+                <div>Copyright © 2019 - sevenQu</div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

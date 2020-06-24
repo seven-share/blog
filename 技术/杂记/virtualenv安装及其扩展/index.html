@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>海阔天空</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/blog/images/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/normalize.css">
+    <link rel="stylesheet" href="/blog/css/index.css">
+  </head>
+  <body>
+    <div class="page">
+        <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/blog/">海阔天空</a>
+                    </div>
+                
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            
+                                <li><a href="/blog/">首页</a></li>
+                            
+                                <li><a href="/blog/categories">分类</a></li>
+                            
+                                <li><a href="/blog/about">关于</a></li>
+                            
+                        
+                        
+                        
+                    </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+        </nav>
+        <section class="main-content">
+            <div class="container artical-box">
+    <div class="artical-content">
+        <h3 id="virtual安装及其扩展"><a href="#virtual安装及其扩展" class="headerlink" title="virtual安装及其扩展"></a>virtual安装及其扩展</h3><hr>
+<h4 id="因为ubantu系统自带python2和python3，所以安装过程需要注意"><a href="#因为ubantu系统自带python2和python3，所以安装过程需要注意" class="headerlink" title="因为ubantu系统自带python2和python3，所以安装过程需要注意"></a>因为ubantu系统自带python2和python3，所以安装过程需要注意</h4><ul>
+<li>安装pip，注意是安装python3-pip</li>
+<li>sudo pip3 install virtualenv</li>
+<li>sudo pip3 install virtualenvwrapper<ul>
+<li>注意是使用sudo进行的pip安装</li>
+</ul>
+</li>
+<li>virtualenvwrapper.sh这个文件位置，众说纷纭，我的是在/usr/local/bin（无法修改）</li>
+<li>ctrl+h可以将隐藏文件显示</li>
+<li>创建保存虚拟环境的位置<ul>
+<li>mkdir $HOME/.virtualenvs</li>
+</ul>
+</li>
+<li>找到~/.bashrc并打开,插入如下代码块<pre><code>export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre><ul>
+<li>第一句是指定虚拟环境保存目录</li>
+<li>指定虚拟环境，默认使用python3</li>
+<li>指定运行文件</li>
+</ul>
+</li>
+<li>参考网页<ul>
+<li><a href="https://www.jianshu.com/p/842eced0df69" target="_blank" rel="noopener">virtualenvwrapper错误解决</a></li>
+<li><a href="http://blog.csdn.net/mbl114/article/details/78089741" target="_blank" rel="noopener">错误原因解释</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="ubantu连接github"><a href="#ubantu连接github" class="headerlink" title="ubantu连接github"></a>ubantu连接github</h4><ul>
+<li><a href="https://www.jianshu.com/p/6c61b13e8bdb" target="_blank" rel="noopener">参考网址</a></li>
+</ul>
+
+        <div class="artical-content-date">
+            2019-06-02
+        </div>
+    </div>
+</div>
+        </section>
+        <footer>
+            <div class="container">
+                <div>谁年少不曾轻狂</div>
+                <div>Copyright © 2019 - sevenQu</div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

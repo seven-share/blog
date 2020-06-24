@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>海阔天空</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/blog/images/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/normalize.css">
+    <link rel="stylesheet" href="/blog/css/index.css">
+  </head>
+  <body>
+    <div class="page">
+        <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/blog/">海阔天空</a>
+                    </div>
+                
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            
+                                <li><a href="/blog/">首页</a></li>
+                            
+                                <li><a href="/blog/categories">分类</a></li>
+                            
+                                <li><a href="/blog/about">关于</a></li>
+                            
+                        
+                        
+                        
+                    </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+        </nav>
+        <section class="main-content">
+            <div class="container artical-box">
+    <div class="artical-content">
+        <h3 id="sql笔记"><a href="#sql笔记" class="headerlink" title="sql笔记"></a>sql笔记</h3><hr>
+<h4 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h4><ul>
+<li>感觉学完不用，只是有了一个大概的轮廓和印象</li>
+<li>很多再用都需要查，有待使用熟练吧</li>
+</ul>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li>这次我使用的时zip安装，费了一些周折</li>
+<li><a href="https://zhuanlan.zhihu.com/p/112765207" target="_blank" rel="noopener">参考教程</a></li>
+<li><a href="https://forta.com/books/0672327120/" target="_blank" rel="noopener">mysql必知必会官网</a></li>
+</ul>
+<h4 id="启动和关闭mysql服务器"><a href="#启动和关闭mysql服务器" class="headerlink" title="启动和关闭mysql服务器"></a>启动和关闭mysql服务器</h4><ul>
+<li>net start mysql</li>
+<li>net stop mysql</li>
+</ul>
+<h4 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h4><ul>
+<li>mysql - u 用户名 -p</li>
+<li>system cls 清屏命令</li>
+</ul>
+<h4 id="show"><a href="#show" class="headerlink" title="show"></a>show</h4><ul>
+<li>show databases，查看数据库</li>
+<li>use 数据库，使用某数据库</li>
+<li>show tables，查看数据表</li>
+<li>show columns from，查看表头</li>
+</ul>
+<h4 id="select"><a href="#select" class="headerlink" title="select"></a>select</h4><ul>
+<li>select 列名 from 表</li>
+<li>select 列名，列名，列名 from 表</li>
+<li>select * from 表</li>
+<li>select distinct 列名，列名 from 表，只返回数据不同的行，distinct会对后面所有列生效</li>
+<li>select 列名 from 表 limite 5</li>
+<li>select 列名 from 表 limite 5，4，限制为5行，跳过前四行</li>
+<li>select 表名.列名 from 数据库.表名</li>
+</ul>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><ul>
+<li>select 列名，列名，列名 from 表 order by 列名 desc/asc，默认升序asc，desc降序</li>
+<li>select 列名，列名，列名 from 表 order by 列名 limit 4，注意limit要在order by 之后</li>
+</ul>
+<h4 id="where"><a href="#where" class="headerlink" title="where"></a>where</h4><ul>
+<li>select 列名 from 表 where 条件 order by 列名，注意order by需要在where之后</li>
+<li>&lt;&gt;不等于，between为在两者之间，包括头尾，between 5 and 10</li>
+<li>where 列名 is null 或者使用is not null</li>
+<li>and,or,not，in，优先计算and，强制某顺序可加括号</li>
+<li>列名 in (值1，值2，值3)</li>
+</ul>
+<h4 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h4><ul>
+<li>select 列名，列名，列名 from 表 like ‘xxx’</li>
+<li>% 任意数量的字符，_仅适配一个字符</li>
+</ul>
+<h4 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h4><ul>
+<li>select 列名，列名，列名 from 表 REGEXP ‘正则表达式’</li>
+<li>.xxx .匹配任意一个字符</li>
+<li>1000|2000，或</li>
+<li>[123] ton,匹配1或2或3，与1|2|3 ton不一样，最后匹配的是或3 ton，可以考虑加括号</li>
+<li>[1-9],[a-z],匹配这之间的内容</li>
+<li>转义匹配，\.表示. ,\为转义，具体详查</li>
+<li>匹配字符类[:alnum:],任意字母和数字，[:alpha:]，任意字符</li>
+<li>匹配多个实例<ul>
+<li>*，0个或多个</li>
+<li>+，1个或多个</li>
+<li>?，0个或一个</li>
+<li>{n}，匹配指定数目</li>
+<li>{n,}，不少于指定数目的匹配</li>
+<li>{n,m}，匹配数目范围n到m</li>
+<li>例如tasks+，匹配taskss，tasksss等</li>
+</ul>
+</li>
+<li>^，文本开头，$文本结尾，[[:&lt;:]]词语的开头，[[:&gt;:]]词语的结尾</li>
+</ul>
+<h4 id="计算字段"><a href="#计算字段" class="headerlink" title="计算字段"></a>计算字段</h4><ul>
+<li>select 列名*列名 as xxx，可使用加减乘除</li>
+<li>concat()，字符串连接，trim去除空格，ltrim去除左空格，rtrim去除右空格</li>
+</ul>
+<h4 id="数据处理的函数"><a href="#数据处理的函数" class="headerlink" title="数据处理的函数"></a>数据处理的函数</h4><ul>
+<li>文本处理，left(),length(),locate(),lower(),upper(),substring()等，具体详查</li>
+<li>日期处理，adddate(),addtime(),date(),day(),month()等，具体详查</li>
+</ul>
+<h4 id="汇总数据"><a href="#汇总数据" class="headerlink" title="汇总数据"></a>汇总数据</h4><ul>
+<li>avg()，count()，max()，min()，sum()</li>
+<li>select avg(xxx) as xxx from 表</li>
+</ul>
+<h4 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h4><ul>
+<li>select xx from xx group by 表 having 条件 order by xx</li>
+<li>注意顺序select from where group by having order by limit</li>
+</ul>
+<h4 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h4><ul>
+<li>将两个sql语句进行嵌套</li>
+<li>select xxx，(sql语句，注意列名前加上表名，例子：orders.id,customers.id) from xx</li>
+</ul>
+<h4 id="连结表"><a href="#连结表" class="headerlink" title="连结表"></a>连结表</h4><ul>
+<li>select xxx,xxx,xxx from 表1，表2 where 表1.xx=表2.xx</li>
+<li>如果不给where限制条件，表1将和表2的每一行进行联结</li>
+<li>上面的操作为等值联结，又称内部联结</li>
+<li>也可以，select xxx，xxx，xxx from 表1 inner join 表2 on 表1.xx=表2.xx</li>
+<li>也可以多表连结</li>
+</ul>
+<h4 id="高级联结"><a href="#高级联结" class="headerlink" title="高级联结"></a>高级联结</h4><ul>
+<li>可以使用as给表命名别名</li>
+<li>在同一个表内进行联结操作，使用别名比较方便明了</li>
+<li>表.*，表示表中所有列</li>
+<li>外部连结<ul>
+<li>select xxx，xxx，xxx from 表1 left/right join 表2 on 表1.xx=表2.xx</li>
+<li>left join表示左边的不动，选择所有行，右边表进行条件匹配添加</li>
+<li>right join表示右边不动，选择所有行，左边表进行条件匹配添加</li>
+</ul>
+</li>
+</ul>
+<h4 id="组合查询"><a href="#组合查询" class="headerlink" title="组合查询"></a>组合查询</h4><ul>
+<li>union 将多个select查询结果组合在一起，注意查询到列名需要一致</li>
+<li>默认union会去重复，如果想全部保留，使用union all</li>
+<li>可以在所有的组合查询最后使用order by 对上面所有的结果汇总生效</li>
+</ul>
+<h4 id="全文本搜索"><a href="#全文本搜索" class="headerlink" title="全文本搜索"></a>全文本搜索</h4><ul>
+<li>在创建表的时候就对其进行定义fulltext</li>
+<li>使用方法：select xx from xx where match(列名) aganist(‘文本xxx’)</li>
+<li>select xx from xx match(列名) aganist(‘文本xxx’)，如果不加where则返回所有行里该文本出现的次数</li>
+<li>查询拓展：select xx from xx match(列名) aganist(‘文本xxx’ with query expantion)，将返回一些相关的行</li>
+<li>布尔查询：select xx from xx match(列名) aganist(‘文本xxx -xxx’ in boolean mode)<ul>
+<li>+表示必须存在，-表示不出现，&lt;降低等级值，&gt;增加等级值，()组成子表达式</li>
+<li>~取消一个词的排序值，*词尾通配符，””定义一个短语</li>
+</ul>
+</li>
+</ul>
+<h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><ul>
+<li>insert into xxx表 values(xxx,xxx,xxx)，和表中列的顺序一致，空的需要用null</li>
+<li>insert into xxx表(xxx,xxx,xxx) values(xxx,xxx,xxx)，前后相对应。为空的，前面不写即为默认值</li>
+<li><p>插入多行</p>
+<ul>
+<li><pre>
+insert into xxx表 values
+                (xxx,xxx,xxx),
+                (xxx,xxx,xxx);
+</pre>
+</li>
+</ul>
+</li>
+<li><p>插入检索数据</p>
+<ul>
+<li>insert into xxx表(xxx,xxx,xxx) select xxx，xxx，xxx from xxx表，前后所需填写的值相对应即可，名字不一定相同</li>
+</ul>
+</li>
+</ul>
+<h4 id="更新和删除"><a href="#更新和删除" class="headerlink" title="更新和删除"></a>更新和删除</h4><ul>
+<li>update xxx表 set xx=xxx，xx=xxx where xx=xx</li>
+<li>delete from xx表 where xx=xx</li>
+<li>为了严谨，可以使用select提前进行查看，之后再更新或删除</li>
+<li>如果没有where会更新所有行，慎重</li>
+</ul>
+<h4 id="创建和操纵表"><a href="#创建和操纵表" class="headerlink" title="创建和操纵表"></a>创建和操纵表</h4><ul>
+<li><pre>
+create table 表名
+  (
+    列名 int not null auto_increment,
+    列名 char(10) null default 1,
+    primary key(列名，列名)
+  )engine=innodb
+</pre>
+</li>
+<li><p>primary key的值一定唯一，如果主键是多列，则他们的组合值唯一</p>
+</li>
+<li>引擎innodb可靠的事务处理引擎，无法全文搜索，memory适合临时表，myisam，可全文搜索，不支持事务处理</li>
+<li>更新表 alter table 表名 add 列名 char(10) null default 1,同上创建表格时列的定义方法</li>
+<li>alter table 表名 drop 列名，删除列</li>
+<li>指定外键：alter table 表名 add foreign key (xx) reference 表名(列名)</li>
+<li>alter table 表名 add constraint 外键名字 foreign key (xx) reference 表名(列名)</li>
+<li>alter table 表名 drop foreign key 外键名，撤销外键</li>
+<li>删除表：drop table 表名</li>
+<li>重命名表：rename table 表名 to 表名</li>
+</ul>
+<h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><ul>
+<li>视图可以理解为一个虚拟的表</li>
+<li>视图名字唯一，如果视图检索select中有order by则视图中的order by会被覆盖</li>
+<li>create view 视图名 as 查询语句，创建视图</li>
+<li>show create view viewname 查看创建视图</li>
+<li>drop view viewname 删除视图</li>
+<li>跟新视图一般是先删除，后创建，或者使用create or replace view as 查询语句</li>
+<li>视图一般用于检索后的展示，一般不会将视图再进行其他操作，例如分组，联结，子查询等</li>
+</ul>
+<h4 id="使用储存过程"><a href="#使用储存过程" class="headerlink" title="使用储存过程"></a>使用储存过程</h4><ul>
+<li>感觉就是函数</li>
+<li>创建储存过程<ul>
+<li>create procedure 函数名()<br>begin<br>xxxxxx,执行过程<br>end</li>
+</ul>
+</li>
+<li>删除储存过程，drop procedure 函数名</li>
+<li>传递参数<ul>
+<li>create procedure 函数名(<br>  out 变量名1 decimal(8,2),<br>  in 变量名2 int<br>)<br>begin<br>  select xxx<br>  into 变量名1<br>  from 表名<br>end</li>
+</ul>
+</li>
+<li>decimal(8，2)表示一共8位，小数2位</li>
+<li>变量需要使用@xxx进行标识</li>
+<li>调用call 函数名(xxx,@xxx)</li>
+<li>in直接传递所需值就可以，out需要用@xx进行标识，方便后面使用</li>
+<li>select @xxx，@xxx  会将变量展示出来</li>
+<li>前面– 表示注释</li>
+<li>展示储存过程 show create procedure 函数名</li>
+<li>展示函数创建人、创建时间等 show procedure status like ‘函数名’</li>
+</ul>
+<h4 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h4><ul>
+<li>使用declare 游标名 cursor for 查询语句</li>
+<li>open 游标名，fetch 游标名 操作 例如into xxx</li>
+<li>close 游标名</li>
+<li>fetch 每次会取出一行</li>
+</ul>
+<h4 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h4><ul>
+<li>create trigger 触发器名 after insert on 表名<br>  for each row select new.xxx</li>
+<li>new 表示新生成的行，after insert中可以使用，即插入后，同时可以使用new进行数据更新</li>
+<li>before insert，插入前</li>
+<li>before delete，可以使用old访问未删除的行，alter delete</li>
+<li>before update，after update，old只读，new可用于数据更新</li>
+</ul>
+<h4 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h4><ul>
+<li>start transacition</li>
+<li>rollback，回退</li>
+<li>commit，提交</li>
+<li>savepoint 节点名 ，保留节点</li>
+<li>rollback to 节点名</li>
+<li>set autocommit=0取消自动提交</li>
+</ul>
+<h4 id="管理用户"><a href="#管理用户" class="headerlink" title="管理用户"></a>管理用户</h4><ul>
+<li>use mysql</li>
+<li>select user from user，展示数据库的用户</li>
+<li>create user 用户名 identified by ‘密码’</li>
+<li>rename user 原用户名 to 新用户名</li>
+<li>drop user 用户名，删除用户</li>
+<li>show grants for 用户名，展示用户权限</li>
+<li>赋予权限 grants xxx操作 on 数据库.* to 用户名，该数据的所有表的搜索权限</li>
+<li>revoke  xxx操作 on 数据库.* from 用户名，撤销权限</li>
+<li>set password for 用户名=password(‘新密码’)</li>
+</ul>
+
+        <div class="artical-content-date">
+            2020-05-14
+        </div>
+    </div>
+</div>
+        </section>
+        <footer>
+            <div class="container">
+                <div>谁年少不曾轻狂</div>
+                <div>Copyright © 2019 - sevenQu</div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
