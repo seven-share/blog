@@ -34,13 +34,15 @@ a:focus, a:hover {
 }
 .cards .card{
     width: 48%;
-    height: 176px;
+    height: 70px;
     border-radius: 12px;
     background-color: white;
     box-sizing: border-box;
     position: relative;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-    margin: 0 1% 20px;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 1% 15px;
+    padding: 8px;
+    overflow: hidden;
 }
 .cards .card::after{
     position: absolute;
@@ -49,7 +51,7 @@ a:focus, a:hover {
     width: 100%;
     height: 100%;
     transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
     content: '';
     opacity: 0;
     z-index: -1;
@@ -79,28 +81,38 @@ a:focus, a:hover {
         margin: 0 1% 20px;
     }
  }
-.cards .card .article-cover img{
-    width: 100%;
-    height: 110px;
-    border-radius: 12px 12px 0 0;
+
+
+.cards .card .card-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
 }
+
 .cards .card .article-title{
     color: black;
-    margin: 8px 8px 0;
+    font-weight: bolder;
     line-height: 25px;
     height: 25px;
     overflow: hidden;
 }
+
+.cards .card .card-top .emoji img{
+    width: 20px;
+    height: 20px;
+}
+
+
+
 .cards .card .card-bottom{
     display: flex;
     justify-content: space-between;
     font-size: 10px;
     color: gray ;
-    padding: 5px 8px;
 }
-.cards .card .card-bottom .article-lable-top{
-    color: #1da1f2;
-    cursor: default;
+.cards .card .card-bottom .article-lable a{
+    cursor: pointer;
 }
 .cards .card .card-bottom .article-time{
     cursor: default;
@@ -109,6 +121,7 @@ a:focus, a:hover {
 .container .pager{
     display: flex;
     justify-content: space-between;
+    margin: 10px 0 0;
 }
 
 .container .pager::before, .container .pager::after{
