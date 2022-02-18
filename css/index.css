@@ -10,11 +10,8 @@ a:focus, a:hover {
 }
 
 
-
 .container{
     max-width: 960px;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 .page{
     padding-top: 70px;
@@ -29,6 +26,7 @@ a:focus, a:hover {
 .cards{
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     padding: 0 5px;
     min-height: 400px;
 }
@@ -66,10 +64,6 @@ a:focus, a:hover {
         
         
 @media (min-width: 600px) {
-    .container{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
     .cards .card{
         width:32%;
         margin: 0 0.66% 20px;
