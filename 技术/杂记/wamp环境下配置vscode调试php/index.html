@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,16 @@
 
     <!-- Bootstrap -->
     <link rel="icon" href="/blog/images/favicon.ico">
-    <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/blog/css/normalize.css">
-    <link rel="stylesheet" href="/blog/css/index.css">
-  </head>
+    
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css">
+
+    
+<link rel="stylesheet" href="/blog/css/normalize.css">
+
+    
+<link rel="stylesheet" href="/blog/css/index.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
   <body>
     <div class="page">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -50,15 +56,15 @@
     <div class="artical-content">
         <h3 id="wamp环境下配置vscode调试php"><a href="#wamp环境下配置vscode调试php" class="headerlink" title="wamp环境下配置vscode调试php"></a>wamp环境下配置vscode调试php</h3><hr>
 <ol>
-<li>点击进入localhost网页<br><img src="https://ae01.alicdn.com/kf/U7e47fbc851fa4d77aa7630980e16bd9fu.png" alt></li>
+<li>点击进入localhost网页<br><img src="https://ae01.alicdn.com/kf/U7e47fbc851fa4d77aa7630980e16bd9fu.png"></li>
 <li>左下角，点击phpinfo（），右键选择网页源代码复制</li>
-<li><a href="https://xdebug.org/wizard.php" target="_blank" rel="noopener">将复制的源代码粘贴到该网址</a>（注意一定是网页源代码）</li>
-<li>他已经把结果都告诉你了<br><img src="https://ae01.alicdn.com/kf/U38cb2a1336b345f78dbe1304ea85d208w.png" alt></li>
+<li><a target="_blank" rel="noopener" href="https://xdebug.org/wizard.php">将复制的源代码粘贴到该网址</a>（注意一定是网页源代码）</li>
+<li>他已经把结果都告诉你了<br><img src="https://ae01.alicdn.com/kf/U38cb2a1336b345f78dbe1304ea85d208w.png"></li>
 <li>下载该文件，放置到步骤2所说的指定目录，复制步骤3的配置代码到php.ini</li>
 <li>php.ini有两种方法可以找到<br>a. 直接在wamp图标下找到php-&gt;php.ini<br>b. 打开wamp文件夹，在类似这样的目录下E:\wamp\bin\apache\apache2.4.17\bin找到php.ini文件，注意是在apache目录下找到</li>
-<li>[xdebug]<br>zend_extension =”E:/wamp/wamp/bin/php/php7.0.0/ext/php_xdebug-2.5.4-7.0-vc14-x86_64.dll”<br>xdebug.remote_enable = On<br>xdebug.remote_autostart=1<br>xdebug.remote_port = 9009<br>xdebug.profiler_enable = On<br>xdebug.profiler_enable_trigger = off<br>xdebug.profiler_output_name = cachegrind.out.%t.%p<br>xdebug.profiler_output_dir =”E:/wamp/wamp/tmp”<br>xdebug.show_local_vars=0<br><strong>除了复制过来的，注意最终要的就是前面三行，开启xdebug和监听端口号</strong></li>
-<li>wamp默认是9000，vscode默认也是9000，但是注意查看端口是否被占用<br><a href="http://jingyan.baidu.com/article/3c48dd34491d47e10be358b8.html" target="_blank" rel="noopener">查询端口是否被占用的方法</a><br>我因为查到9000被占用，所以改为9009</li>
-<li>之后打开vscode，可能会提示你无法解析php<br><img src="https://ae01.alicdn.com/kf/U7b20e4a67a2c43ae90bba4dc49bb8f29n.png" alt><br>将wamp中php下的php.exe写入配置<br><strong>注意要将php.exe加入环境变量</strong></li>
+<li>[xdebug]<br>zend_extension &#x3D;”E:&#x2F;wamp&#x2F;wamp&#x2F;bin&#x2F;php&#x2F;php7.0.0&#x2F;ext&#x2F;php_xdebug-2.5.4-7.0-vc14-x86_64.dll”<br>xdebug.remote_enable &#x3D; On<br>xdebug.remote_autostart&#x3D;1<br>xdebug.remote_port &#x3D; 9009<br>xdebug.profiler_enable &#x3D; On<br>xdebug.profiler_enable_trigger &#x3D; off<br>xdebug.profiler_output_name &#x3D; cachegrind.out.%t.%p<br>xdebug.profiler_output_dir &#x3D;”E:&#x2F;wamp&#x2F;wamp&#x2F;tmp”<br>xdebug.show_local_vars&#x3D;0<br><strong>除了复制过来的，注意最终要的就是前面三行，开启xdebug和监听端口号</strong></li>
+<li>wamp默认是9000，vscode默认也是9000，但是注意查看端口是否被占用<br><a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/3c48dd34491d47e10be358b8.html">查询端口是否被占用的方法</a><br>我因为查到9000被占用，所以改为9009</li>
+<li>之后打开vscode，可能会提示你无法解析php<br><img src="https://ae01.alicdn.com/kf/U7b20e4a67a2c43ae90bba4dc49bb8f29n.png"><br>将wamp中php下的php.exe写入配置<br><strong>注意要将php.exe加入环境变量</strong></li>
 <li>点击调试，选择php语言，进入调试的配置项<br>将端口改为和上面xdebug的端口号一致<br>打断点，用网页访问该文件，即可看到断点。</li>
 </ol>
 
@@ -78,8 +84,12 @@
 
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="/blog/js/jquery.min.js"></script>
+    
+<script src="/blog/js/jquery.min.js"></script>
+
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="/blog/js/bootstrap.min.js"></script>
+    
+<script src="/blog/js/bootstrap.min.js"></script>
+
   </body>
 </html>

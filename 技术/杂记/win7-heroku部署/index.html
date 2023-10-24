@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,16 @@
 
     <!-- Bootstrap -->
     <link rel="icon" href="/blog/images/favicon.ico">
-    <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/blog/css/normalize.css">
-    <link rel="stylesheet" href="/blog/css/index.css">
-  </head>
+    
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css">
+
+    
+<link rel="stylesheet" href="/blog/css/normalize.css">
+
+    
+<link rel="stylesheet" href="/blog/css/index.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
   <body>
     <div class="page">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -57,17 +63,18 @@ def deploy():
     upgrade()
     Role.insert_roles()
     User.add_self_follows()
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>注意需要使用migrate</li>
 </ul>
 <h4 id="2-heroku准备"><a href="#2-heroku准备" class="headerlink" title="2. heroku准备"></a>2. heroku准备</h4><ul>
 <li>注册需要使用gmail</li>
 <li>登录前，将文件夹托管给本地的git，login之后直接即可push<ul>
-<li>注意设置.gitignore文件<pre>
+<li>注意设置.gitignore文件  <pre>
   __pycache__
   .vscode
   *.sqlite
-</pre></li>
+  </pre></li>
 <li><h3 id="注意migrations文件，version里面清空，但是加上一个-gitkeep文件，这样在上传的时候version才会有，否则git空文件夹无法上传"><a href="#注意migrations文件，version里面清空，但是加上一个-gitkeep文件，这样在上传的时候version才会有，否则git空文件夹无法上传" class="headerlink" title="注意migrations文件，version里面清空，但是加上一个.gitkeep文件，这样在上传的时候version才会有，否则git空文件夹无法上传"></a>注意migrations文件，version里面清空，但是加上一个.gitkeep文件，这样在上传的时候version才会有，否则git空文件夹无法上传</h3></li>
 </ul>
 </li>
@@ -94,17 +101,22 @@ web：gunicorn manage：app
 <li>启用flask-sslify，注意配置变化为<pre>
 if app.config['SSL_REDIRECT']:
       from flask_sslify import SSLify
-      sslify = SSLify(app)
-</pre></li>
-<li><p>好像源代码里面反了<br>配置文件里开发模式，SSL_DISABLE=False<br>heroku部署模式里是,SSL_DISABLE=True</p>
+      sslify = SSLify(app)</li>
+</ul>
+<p></pre></p>
+<ul>
+<li><p>好像源代码里面反了<br>配置文件里开发模式，SSL_DISABLE&#x3D;False<br>heroku部署模式里是,SSL_DISABLE&#x3D;True</p>
 </li>
 <li><p>代理服务器支持改为ssl，https</p>
 </li>
 </ul>
 <h4 id="4-上传和配置"><a href="#4-上传和配置" class="headerlink" title="4. 上传和配置"></a>4. 上传和配置</h4><ul>
-<li>git push heroku master</li>
-<li>可以git clone下来，查看上传文件</li>
-<li>heroku run python manage.py deploy</li>
+<li><p>git push heroku master</p>
+</li>
+<li><p>可以git clone下来，查看上传文件</p>
+</li>
+<li><p>heroku run python manage.py deploy</p>
+</li>
 <li><p>可以进入shell，伪造一些数据</p>
 <pre>
 heroku run python manage.py sehll
@@ -117,7 +129,7 @@ fake.posts()
 </li>
 </ul>
 <h4 id="migrat失败"><a href="#migrat失败" class="headerlink" title="migrat失败"></a>migrat失败</h4><ul>
-<li>在数据库文件里有一个表是记录上传的过程的表，和migration/versions里的文件相对应，所以上传之前把version里的文件全部删除</li>
+<li>在数据库文件里有一个表是记录上传的过程的表，和migration&#x2F;versions里的文件相对应，所以上传之前把version里的文件全部删除</li>
 <li>如果heroku数据库已经记录迁移过程，versioins文件又被删除，只能reset数据库，在heroku网页端可以操作</li>
 </ul>
 
@@ -137,8 +149,12 @@ fake.posts()
 
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="/blog/js/jquery.min.js"></script>
+    
+<script src="/blog/js/jquery.min.js"></script>
+
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="/blog/js/bootstrap.min.js"></script>
+    
+<script src="/blog/js/bootstrap.min.js"></script>
+
   </body>
 </html>

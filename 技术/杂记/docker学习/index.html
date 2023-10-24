@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,16 @@
 
     <!-- Bootstrap -->
     <link rel="icon" href="/blog/images/favicon.ico">
-    <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/blog/css/normalize.css">
-    <link rel="stylesheet" href="/blog/css/index.css">
-  </head>
+    
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css">
+
+    
+<link rel="stylesheet" href="/blog/css/normalize.css">
+
+    
+<link rel="stylesheet" href="/blog/css/index.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
   <body>
     <div class="page">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -49,14 +55,14 @@
             <div class="container artical-box">
     <div class="artical-content">
         <h3 id="Docker学习"><a href="#Docker学习" class="headerlink" title="Docker学习"></a>Docker学习</h3><p>命令学习<br>docker run ubuntu echo ‘hello world’<br>ubuntu是镜像名字，后为执行语句<br>一次执行，容器就会消失</p>
-<p>docker run -i -t ubuntu /bin/bash<br>-i 交互<br>-t ttl进程<br>启动交互式，镜像为ubuntu的容器的终端<br>exit退出，-it也可</p>
+<p>docker run -i -t ubuntu &#x2F;bin&#x2F;bash<br>-i 交互<br>-t ttl进程<br>启动交互式，镜像为ubuntu的容器的终端<br>exit退出，-it也可</p>
 <p>自定义容器名字<br>docker run –name 自定义的名字 ubuntu echo ‘hello world’</p>
 <p>docker ps<br>显示正在运行中的容器<br>-a显示全部，包括之前停止的容器<br>-l，显示之前最新的容器</p>
 <p>docker inspect 容器名字<br>获取镜像或容器的元数据</p>
 <p>重新启动之前的停止的容器<br>docker start -i 容器名<br>-i以交互的形式重启</p>
 <p>删除容器(必须是已经停止的)<br>docker rm 容器名</p>
-<p>守护式容器<br>docker run -i -t ubuntu /bin/bash<br>ctrl+q或p退出，则会在后台运行</p>
-<p>加入-d直接进入守护式容器<br>docker run -d ubuntu /bin/sh -c ‘执行语句’</p>
+<p>守护式容器<br>docker run -i -t ubuntu &#x2F;bin&#x2F;bash<br>ctrl+q或p退出，则会在后台运行</p>
+<p>加入-d直接进入守护式容器<br>docker run -d ubuntu &#x2F;bin&#x2F;sh -c ‘执行语句’</p>
 <p>重新进入该容器<br>docker attach 容器名</p>
 <p>查看该容器的运行情况<br>docker logs [-f][-i][–tail 数字] 容器名<br>-f follow 实时显示<br>-t timestamps 显示时间戳<br>–tail 显示最新的数量，默认是所有</p>
 <p>查看运行中容器的进程<br>docker top 容器名</p>
@@ -69,8 +75,7 @@
 <p>下载镜像<br>docker pull 仓库名：标签名字<br>上传镜像<br>docker push 仓库名：标签</p>
 <p>使用commit构建镜像<br>docker commit 提交的容器名 镜像名字（将该容器打包为镜像）<br>    -a 作者<br>    -m 保存的信息<br>    -p 是否暂停容器</p>
 <p>使用dockerfile构建镜像<br>首先创建dockerfile文件<br>docker build path<br>path是dockerfile的所在地址<br>-t 标签名<br>默认是使用吧缓存进行构建<br>有些数据会不是最新的<br>–no-cache 不使用缓存<br>docker history images</p>
-<p>dockerfile内容</p>
-<p>#开头是注释<br>指令<br>FROM<br>FROM 镜像：标签</p>
+<p>dockerfile内容<br>#开头是注释<br>指令<br>FROM<br>FROM 镜像：标签</p>
 <p>MAINTAINER 作者信息 邮箱等</p>
 <p>RUN<br>镜像构建时执行的命令<br>shell模式<br>exec模式</p>
 <p>EXPOSE<br>指定镜像使用的端口号</p>
@@ -83,15 +88,15 @@
 <p>USER<br>指定运行用户</p>
 <p>ONBUILD<br>镜像触发器<br>当一个镜像被其他镜像作为基础镜像的时候被执行<br>会在构建过程中插入命令</p>
 <p>查看docker的情况<br>ps -ef|grep docker<br>sudo status docker</p>
-<p>sudo service docker stop<br>sudo service docker start<br>sudo service docker restart<br>docker -d [options]<br>守护进程启动配置文件 /etc/default/docker<br>配置文件添加<br>DOCKER_OPTS=” –label name=abc”<br>给服务器docker添加名字，以示区分，本地和远程都起好名字，方便区分</p>
-<p>默认的docker守护进程 -H tcp://host:port<br>                      unix:///path/to/socket<br>                      fd://*or fd://socketfd<br>                    默认的是unix:///var/run/docker.sock<br>给远程服务器添加配置<br>DOCKER_OPTS=” –label name=abc -H tcp:///0.0.0.0:2375”<br>保存，退出，重启docker使命令生效</p>
-<p>远程客户端访问<br>docker -H tcp://远程机的ip:上面设置的端口 [options]<br>设置环境变量简化访问<br>export DOCKER_HOST=’tcp://远程机的ip:上面设置的端口’<br>docker info会默认访问远程<br>将export DOCKER_HOST=’’置空则会默认访问本地</p>
-<p>使用远程机的时候发现不支持本地访问docker<br>需要在配置文件添加DOCKER_OPTS=” –label name=abc -H tcp:///0.0.0.0:2375 -H unix:///var/run/docker.sock”</p>
-<p>容器的互联<br>默认是互联，但是重启后容器ip会发生变化，使用link指定连接的容器你<br>docker run –link=容器名：别名 images command</p>
-<p>不允许互联<br>修改默认配置文件 /etc/default/docker<br>加上DOCKER_OPTS=’icc=false’</p>
-<p>允许特定的连接<br>icc=false iptables=true<br>使用link指定</p>
-<p>数据卷<br>docker run -v ~/datavolume:/data -it unbuntu /bin/bash<br>-v 宿主机放数据卷的位置，容器放数据卷的位置<br>docker run -v ~/datavolume:/data:权限 -it unbuntu /bin/bash</p>
-<p>数据卷容器<br>首先一个容器挂在了数据卷<br>然后再新建容器是–volumes-from 该容器名<br>例：docker run –volumes-from 该容器名 -it unbuntu /bin/bash<br>可以共享该数据卷<br>使用数据卷容器新建的容器，是使用该数据卷容器的配置<br>数据卷容器被删除后，仍可以使用该数据卷</p>
+<p>sudo service docker stop<br>sudo service docker start<br>sudo service docker restart<br>docker -d [options]<br>守护进程启动配置文件 &#x2F;etc&#x2F;default&#x2F;docker<br>配置文件添加<br>DOCKER_OPTS&#x3D;” –label name&#x3D;abc”<br>给服务器docker添加名字，以示区分，本地和远程都起好名字，方便区分</p>
+<p>默认的docker守护进程 -H tcp:&#x2F;&#x2F;host:port<br>                      unix:&#x2F;&#x2F;&#x2F;path&#x2F;to&#x2F;socket<br>                      fd:&#x2F;&#x2F;*or fd:&#x2F;&#x2F;socketfd<br>                    默认的是unix:&#x2F;&#x2F;&#x2F;var&#x2F;run&#x2F;docker.sock<br>给远程服务器添加配置<br>DOCKER_OPTS&#x3D;” –label name&#x3D;abc -H tcp:&#x2F;&#x2F;&#x2F;0.0.0.0:2375”<br>保存，退出，重启docker使命令生效</p>
+<p>远程客户端访问<br>docker -H tcp:&#x2F;&#x2F;远程机的ip:上面设置的端口 [options]<br>设置环境变量简化访问<br>export DOCKER_HOST&#x3D;’tcp:&#x2F;&#x2F;远程机的ip:上面设置的端口’<br>docker info会默认访问远程<br>将export DOCKER_HOST&#x3D;’’置空则会默认访问本地</p>
+<p>使用远程机的时候发现不支持本地访问docker<br>需要在配置文件添加DOCKER_OPTS&#x3D;” –label name&#x3D;abc -H tcp:&#x2F;&#x2F;&#x2F;0.0.0.0:2375 -H unix:&#x2F;&#x2F;&#x2F;var&#x2F;run&#x2F;docker.sock”</p>
+<p>容器的互联<br>默认是互联，但是重启后容器ip会发生变化，使用link指定连接的容器你<br>docker run –link&#x3D;容器名：别名 images command</p>
+<p>不允许互联<br>修改默认配置文件 &#x2F;etc&#x2F;default&#x2F;docker<br>加上DOCKER_OPTS&#x3D;’icc&#x3D;false’</p>
+<p>允许特定的连接<br>icc&#x3D;false iptables&#x3D;true<br>使用link指定</p>
+<p>数据卷<br>docker run -v ~&#x2F;datavolume:&#x2F;data -it unbuntu &#x2F;bin&#x2F;bash<br>-v 宿主机放数据卷的位置，容器放数据卷的位置<br>docker run -v ~&#x2F;datavolume:&#x2F;data:权限 -it unbuntu &#x2F;bin&#x2F;bash</p>
+<p>数据卷容器<br>首先一个容器挂在了数据卷<br>然后再新建容器是–volumes-from 该容器名<br>例：docker run –volumes-from 该容器名 -it unbuntu &#x2F;bin&#x2F;bash<br>可以共享该数据卷<br>使用数据卷容器新建的容器，是使用该数据卷容器的配置<br>数据卷容器被删除后，仍可以使用该数据卷</p>
 <p>数据备份和还原<br>docker run –volumes-from 容器名 -v 宿主机存放的数据卷位置：容器数据卷存放位置 unbuntu tar cvf 宿主机存放数据卷位置 需要备份的目录<br>数据还原 将cvf改为xvf即可</p>
 
         <div class="artical-content-date">
@@ -110,8 +115,12 @@
 
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="/blog/js/jquery.min.js"></script>
+    
+<script src="/blog/js/jquery.min.js"></script>
+
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="/blog/js/bootstrap.min.js"></script>
+    
+<script src="/blog/js/bootstrap.min.js"></script>
+
   </body>
 </html>

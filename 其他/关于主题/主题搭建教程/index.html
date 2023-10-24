@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,16 @@
 
     <!-- Bootstrap -->
     <link rel="icon" href="/blog/images/favicon.ico">
-    <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/blog/css/normalize.css">
-    <link rel="stylesheet" href="/blog/css/index.css">
-  </head>
+    
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css">
+
+    
+<link rel="stylesheet" href="/blog/css/normalize.css">
+
+    
+<link rel="stylesheet" href="/blog/css/index.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
   <body>
     <div class="page">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -51,17 +57,19 @@
         <h3 id="主题搭建教程"><a href="#主题搭建教程" class="headerlink" title="主题搭建教程"></a>主题搭建教程</h3><hr>
 <h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ol>
 <li>首先刷一遍文档</li>
-<li>按文档推荐的目录结构搭建自己的主题结构<ul>
-<li><a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题链接跳转</a></li>
+<li>按文档推荐的目录结构搭建自己的主题结构</li>
+</ol>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/themes">主题链接跳转</a></li>
 </ul>
-</li>
+<ol start="3">
 <li>建议首先直接搭建网页UI，先不用hexo的框架</li>
 <li>网页UI之后再拆开，作为hexo的一部分</li>
 <li>本主题使用的bootstrap作为UI框架</li>
 </ol>
 <h4 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h4><ol>
 <li>post是文章，page是新开启一个url路径，例如分类和关于，这些page不会作为文章显示</li>
-<li>categories_dir所默认的文件夹是categories，所以新建page文件夹的时候，名字要对应好，否则分类文章路径无法进一步显示，例如这样的路径: <a href="http://localhost:4000/blog/主题/xx子分类/" target="_blank" rel="noopener">http://localhost:4000/blog/主题/xx子分类/</a></li>
+<li>categories_dir所默认的文件夹是categories，所以新建page文件夹的时候，名字要对应好，否则分类文章路径无法进一步显示，例如这样的路径: <a target="_blank" rel="noopener" href="http://localhost:4000/blog/%E4%B8%BB%E9%A2%98/xx%E5%AD%90%E5%88%86%E7%B1%BB/">http://localhost:4000/blog/主题/xx子分类/</a></li>
 <li>_post文章中可以进一步新建文件夹，进行目录结果的分类</li>
 <li>看其他主题的源码，把头部，尾部等组件很多拆开成_partail，在开始写的时候可以不拆分，在一步步深入的情况下，逐步根据需求拆分</li>
 <li>默认的layout是post，所以在分类等其他页面，需要在markdown里注定layout</li>
@@ -73,7 +81,7 @@
 <li>调试过程中，可以在ejs里写&lt;% console.log %&gt;,查看变量</li>
 </ol>
 <h4 id="主题注意点"><a href="#主题注意点" class="headerlink" title="主题注意点"></a>主题注意点</h4><ol>
-<li>置顶功能，根据top值倒叙，<a href="https://blog.whyoop.com/2017/06/07/Hexo%E5%BC%80%E5%90%AF%E7%BD%AE%E9%A1%B6%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">参考1</a>，<a href="https://blog.csdn.net/adobeid/article/details/82704982" target="_blank" rel="noopener">参考2</a></li>
+<li>置顶功能，根据top值倒叙，<a target="_blank" rel="noopener" href="https://blog.whyoop.com/2017/06/07/Hexo%E5%BC%80%E5%90%AF%E7%BD%AE%E9%A1%B6%E5%8A%9F%E8%83%BD/">参考1</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/adobeid/article/details/82704982">参考2</a></li>
 <li>分类页，只能是四个，在category.ejs里写死了，所以可更换或再更改模板才能添加</li>
 </ol>
 <h4 id="命令行记录"><a href="#命令行记录" class="headerlink" title="命令行记录"></a>命令行记录</h4><ol>
@@ -98,8 +106,12 @@
 
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="/blog/js/jquery.min.js"></script>
+    
+<script src="/blog/js/jquery.min.js"></script>
+
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="/blog/js/bootstrap.min.js"></script>
+    
+<script src="/blog/js/bootstrap.min.js"></script>
+
   </body>
 </html>
