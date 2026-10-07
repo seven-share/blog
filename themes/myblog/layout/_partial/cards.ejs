@@ -1,0 +1,41 @@
+<div class="container cards">
+    <% posts.forEach(post => { %>
+        <div class="card">
+            <a href="<%- url_for(post.path) %>">
+            
+                <div class="card-top">
+                    <div class="article-title">
+                        <%- post.title %>
+                    </div>
+                    <% if (post.emoji) { %>
+                        <div class="emoji">
+                            <img src="<%- url_for('/emoji/'+post.emoji+'.png') %>">
+                        </div>
+                    <% } %>
+                    
+
+                </div>
+            </a>
+
+                <div class="card-bottom">
+                    <div class="article-lable">
+                        <% if (post.categories && post.categories.length > 0) { %>
+                            <% if (post.top==1){ %>
+                                <span class="article-lable-top">置顶 -</span>
+                            <% } %>
+                            <a href="<%- url_for(post.categories.data[0].path) %>"><%- post.categories.data[0].name %></a>
+                            <span>-</span>
+                            <a href="<%- url_for(post.categories.data[1].path) %>"><%- post.categories.data[1].name %></a>
+                        <% } else { %>
+                            未分类
+                        <% } %>
+                    </div>
+                    <div class="article-time">
+                        <span class="publish-date">
+                            <%= date(post.date, config.date_format) %>
+                        </span>
+                    </div>
+                </div>
+        </div>
+    <% }); %>
+</div>
