@@ -97,6 +97,11 @@ a:focus, a:hover {
     height: 20px;
 }
 
+.card > a:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
 
 
 .cards .card .card-bottom{
